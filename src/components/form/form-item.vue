@@ -1,9 +1,9 @@
 <template>
     <div>
-        <label v-if="label" :class="{ 'i-form-item-label-required': isRequired }">{{ label }}</label>
+        <label v-if="label" :class="{ 'wy-form-item-label-required': isRequired }">{{ label }}</label>
         <div>
             <slot></slot>
-            <div v-if="validateState === 'error'" class="i-form-item-message">{{ validateMessage }}</div>
+            <div v-if="validateState === 'error'" class="wy-form-item-message">{{ validateMessage }}</div>
         </div>
     </div>
 </template>
@@ -106,7 +106,6 @@
                 validator.validate(model, { firstFields: true }, errors => {
                     this.validateState = !errors ? 'success' : 'error';
                     this.validateMessage = errors ? errors[0].message : '';
-
                     callback(this.validateMessage);
                 });
             },
@@ -114,7 +113,6 @@
             resetField () {
                 this.validateState = '';
                 this.validateMessage = '';
-
                 this.form.model[this.prop] = this.initialValue;
             },
             onFieldBlur() {
@@ -127,11 +125,11 @@
     }
 </script>
 <style>
-    .i-form-item-label-required:before {
+    .wy-form-item-label-required:before {
         content: '*';
         color: red;
     }
-    .i-form-item-message {
+    .wy-form-item-message {
         color: red;
     }
 </style>

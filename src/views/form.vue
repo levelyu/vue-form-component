@@ -13,6 +13,7 @@
     </div>
 </template>
 <script>
+    /* eslint-disable */
     import WyForm from '../components/form/form.vue';
     import WyFormItem from '../components/form/form-item.vue';
     import WyInput from '../components/input/input.vue';

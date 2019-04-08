@@ -4,6 +4,7 @@
     </form>
 </template>
 <script>
+    /* eslint-disable */
     export default {
         name: 'wyForm',
         props: {

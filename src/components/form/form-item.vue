@@ -8,6 +8,7 @@
     </div>
 </template>
 <script>
+    /* eslint-disable */
     import AsyncValidator from 'async-validator';
     import Emitter from '../../mixins/emitter.js';
 

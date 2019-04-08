@@ -19,6 +19,7 @@
     import WyInput from '../components/input/input.vue';
 
     export default {
+        name: 'form-page',
         components: { WyForm, WyFormItem, WyInput },
         data () {
             return {

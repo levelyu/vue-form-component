@@ -96,7 +96,7 @@
                 this.validateState = 'validating';
 
                 // 以下为 async-validator 库的调用方法
-                let descriptor = {};
+                const descriptor = {};
                 descriptor[this.prop] = rules;
 
                 const validator = new AsyncValidator(descriptor);
@@ -104,10 +104,10 @@
 
                 model[this.prop] = this.fieldValue;
 
-                validator.validate(model, { firstFields: true }, errors => {
+                validator.validate(model, { firstFields: true }, (errors, invalidFields) => {
                     this.validateState = !errors ? 'success' : 'error';
                     this.validateMessage = errors ? errors[0].message : '';
-                    callback(this.validateMessage);
+                    callback(this.validateMessage, invalidFields);
                 });
             },
             // 重置数据

@@ -40,12 +40,21 @@
         },
         methods: {
             handleSubmit () {
-                this.$refs.form.validate((valid) => {
-                    if (valid) {
-                        window.alert('提交成功');
-                    } else {
-                        window.alert('表单校验失败');
-                    }
+                // this.$refs.form.validate((valid, invalidFields) => {
+                //     if (valid) {
+                //         window.alert('提交成功');
+                //         console.log(invalidFields);
+                //     } else {
+                //         window.alert('表单校验失败');
+                //         console.log(invalidFields);
+                //     }
+                // })
+                this.$refs.form.validate()
+                .then((res)=>{
+                     window.alert('提交成功');
+                })
+                .catch((error) => {
+                    window.alert('表单校验失败');
                 })
             },
             handleReset () {
